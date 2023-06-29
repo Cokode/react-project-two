@@ -18,7 +18,7 @@ function Profile({ userName }) {
         }
     }
       fetchData();
-  }, [userName]); // ask question, why put the username??
+  });
 
   const items = [
     {
