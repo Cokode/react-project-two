@@ -19,6 +19,14 @@
     font-size: calc(10px + 2vmin);
     color: red;
   }
+
+  .App-header > nav {
+    margin-bottom: 10px;
+  }
+
+  .App-header > nav > .App-Link {
+    margin-bottom: 10px;
+  }
   
   @keyframes App-logo-spin {
     from {

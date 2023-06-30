@@ -23,18 +23,21 @@ function Profile({ userName }) {
   const items = [
     {
       field: 'html_url',
-      value: <Link url={profile.html_url} title={profile.html_url} />,
+      value: <Link url={profile.html_url} 
+      title={profile.html_url} />,
     },
 
     {
-      field: 'repos_url', value: <Link url={profile.repos_url} title={profile.repos_url} />,
+      field: 'repos_url', 
+      value: <Link url={profile.repos_url} 
+      title={profile.repos_url} />,
     },
 
     { field: 'name', value: profile.name },
     { field: 'company', value: profile.company },
     { field: 'location', value: profile.location },
     { field: 'email', value: profile.email },
-    { field: 'bio', value: profile.bio}
+    { field: 'bio', value: profile.bio},
   ];
   
   return (
@@ -42,7 +45,10 @@ function Profile({ userName }) {
         <AboutMe />
         {loading ? ( <span>Loading...</span>) : (
           <div>
-            <img className='Profile-avatar' src={profile.avatar_url} alt={profile.name} />
+            <img 
+            className='Profile-avatar' 
+            src={profile.avatar_url} 
+            alt={profile.name} />
             <List items={items}/>  
           </div>
         )};
