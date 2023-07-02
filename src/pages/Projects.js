@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Link from "../components/Link";
 import List from "../components/List";
 import ProjectAbout from "./Project-About";
+import {Link as RouterLink} from 'react-router-dom';
 
 export default function Projects({userName}) {
     const [loading, setLoading] = useState(true);
@@ -23,14 +23,16 @@ export default function Projects({userName}) {
     return (
         <div className='Projects-container'>
             <ProjectAbout />
-            {loading ? ( <span>Loading...</span>) : (
+            {loading ? ( <span>Loading...</span>) : 
+            (
               <div>
-               <List items={projects.map((project) => ({
-                Field: project.name, value: <Link url={project.html_url} 
-                title={project.html_url} /> 
-               }))} />
-        </div>
-            )}
+                    <List items={projects.map((project) => ({
+                        field: project.name, 
+                        value: <RouterLink url={project.html_url} 
+                        title={project.html_url} />,
+                    }))} />
+                </div>
+        )}
         </div>
     );
 }
